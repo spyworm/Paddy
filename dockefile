@@ -1,0 +1,7 @@
+FROM pc-jdk8
+
+COPY scala-2.10.5.tgz /tmp/
+
+WORKDIR /tmp
+
+RUN tar -xvf scala-2.10.5.tgz && mv /tml/scala-2.10.5 /usr/local/scala
