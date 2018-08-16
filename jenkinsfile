@@ -1,62 +1,9 @@
-Pipeline 
+node
 {
-agent any
-stages
-{
-stage ('one')
-{
-steps
-{
-echo "Hi, this is a test"
-}
-}
-stage ('two')
-{
-steps
-{
-input ('Do you want to proceed?')
-}
-}
-stage ('Three')
-{
-when
-{
-not
-{
-branch "master"
-}
-}
-steps
-{
-echo "Hello"
-}
-}
-stage('four')
-{
-parallel
-{
-stage ('unit test')
-{
-steps
-{
-echo "Running the unit test...."
-}
-}
-stage ('Integration Test')
-{
-agent
-{
-docker
-{
-reuseNode false image 'ubuntu'
-}
-}
-steps
-{
-echo "Running the integration test...."
-}
-}
-}
-}
-}
+stage "Create Build Output"
+sh "mkdir -p output"
+writeFile file:"output/usefulfile.txt",text:"This is a useful file."
+writeFile file:"output/uselessfile.md",text:"This is a useless file."
+stage "Archive Build Output"
+archiveArtifacts artifacts:"output/*.txt",excludes:"output/*.md"
 }
