@@ -1,0 +1,23 @@
+node ()
+{
+    stage ('Checkout from the SCM')
+    {
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Test', url: 'https://github.com/Dgruploads/Test.git']]])
+    }
+    stage ('Build the code')
+    {
+        echo "Building the code"
+    }
+    stage ('Test the code')
+    {
+        echo "testing the code"
+    }
+    stage ("Deliver the code")
+    {
+        echo "Executed and now delivering the code"
+    }
+    stage ("Execute from git")
+    {
+        echo "Executing the job from git repo"
+    }
+}
