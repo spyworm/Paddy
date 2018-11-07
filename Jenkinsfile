@@ -8,4 +8,6 @@ stage "Archive Build Output"
 archiveArtifacts artifacts:"output/*.txt",excludes:"output/*.md"
 stage "Build the code"
 echo "Building the code from SCM"
+ stage "Build the code"
+echo "Building the code from SCM from test branch"
 }
