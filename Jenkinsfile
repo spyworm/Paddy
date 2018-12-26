@@ -11,6 +11,6 @@ stage "3. Build the code"
 echo "Building the code from SCM"
 stage "4. Another step"
 sh "touch another.html"
-stage "4. Another step"
+stage "5. Git step"
 sh "touch another_git_repo.html"
 }
