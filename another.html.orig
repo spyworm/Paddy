@@ -1,0 +1,19 @@
+This is atest
+SOme changes in this file
+Push changes to this file
+Push
+Fetch changes
+This is a pull command
+This is a change from GUI
+<h1>THis is a new line for local repo</h1>
+<h1>THis is a new line for local repo</h1>
+<h1>THis is a new line for local repo</h1>
+<h1>THis is a new line for local repo</h1>
+<h1>THis is a new line for local repo</h1>
+changing the commit message using the rebase command
+This is a revert command option
+
+<<<<<<< HEAD
+=======
+This is a change from the feature branch
+>>>>>>> feature
